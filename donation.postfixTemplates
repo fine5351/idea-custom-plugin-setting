@@ -34,16 +34,16 @@
   NON_VOID [org.slf4j.Logger] → log.error("$expr$ : {}", $expr$);
 
 .jdebug : log.debug(json)
-  NON_VOID [org.slf4j.Logger] → log.debug("$expr$ : {}", GsonUtils.toJson($expr$));
+  NON_VOID [org.slf4j.Logger] → log.debug("$expr$ : {}", GsonUtil.toJson($expr$));
 
 .jinfo : log.info(json)
-  NON_VOID [org.slf4j.Logger] → log.info("$expr$ : {}", GsonUtils.toJson($expr$));
+  NON_VOID [org.slf4j.Logger] → log.info("$expr$ : {}", GsonUtil.toJson($expr$));
 
 .jwarn : log.warn(json)
-  NON_VOID [org.slf4j.Logger] → log.warn("$expr$ : {}", GsonUtils.toJson($expr$));
+  NON_VOID [org.slf4j.Logger] → log.warn("$expr$ : {}", GsonUtil.toJson($expr$));
 
 .jerr : log.error(json)
-  NON_VOID [org.slf4j.Logger] → log.error("$expr$ : {}", GsonUtils.toJson($expr$));
+  NON_VOID [org.slf4j.Logger] → log.error("$expr$ : {}", GsonUtil.toJson($expr$));
 
 # boolean
 .in : isNull(Object)
@@ -68,10 +68,10 @@
 
 # json
 .tj : object to json
-  NON_VOID -> GsonUtils.toJson($expr$)
+  NON_VOID -> GsonUtil.toJson($expr$)
 
 .fj : json to object
-  java.lang.String -> GsonUtils.fromJson($expr$, $end$)
+  java.lang.String -> GsonUtil.fromJson($expr$, $end$)
 
 # Junit5
 .fail : fail
