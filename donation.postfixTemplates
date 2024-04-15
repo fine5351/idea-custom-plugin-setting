@@ -100,3 +100,9 @@
   ARRAY [org.junit.jupiter.api.Assertions]                       →  org.junit.jupiter.api.Assertions.assertArrayEquals($args$, $expr$);
 .assertIterableEquals : assertIterableEquals
   java.lang.Iterable [org.junit.jupiter.api.Assertions]          →  org.junit.jupiter.api.Assertions.assertIterableEquals($args$, $expr$);
+
+# lambda
+.toIntStream: to IntStream
+  NUMBER → java.util.stream.IntStream.range(0, $expr$).mapToObj(index-> {  $end$  }).toList();
+
+

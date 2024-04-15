@@ -124,3 +124,7 @@
   java.lang.String [com.jkopay.msghub.exception.Assertions] -> Assertions.isBlank($expr$).orThrow($end$);
 .isNotBlankOr : Assertions.isNotBlank
   java.lang.String [com.jkopay.msghub.exception.Assertions] -> Assertions.isNotBlank($expr$).orThrow($end$);
+
+# lambda
+.toIntStream: to IntStream
+  NUMBER → java.util.stream.IntStream.range(0, $expr$).mapToObj(index-> {  $end$  }).toList();
