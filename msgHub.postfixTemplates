@@ -1,90 +1,98 @@
 # toString
 .ts : String.valueOf
-  NON_VOID -> String.valueOf($expr$)
+  NON_VOID  ->  String.valueOf($expr$)
 
 # equals
 .oeq : Objects.equals
-  NON_VOID [java.util.Objects] → Objects.equals($end$, $expr$)
+  NON_VOID [java.util.Objects]                             →  Objects.equals($end$, $expr$)
 .seq : StringUtils.equals
-  java.lang.String [org.apache.commons.lang3.StringUtils] → StringUtils.equals($end$, $expr$)
+  java.lang.String [org.apache.commons.lang3.StringUtils]  →  StringUtils.equals($end$, $expr$)
 .seqi : StringUtils.equalsIgnoreCase
-  java.lang.String [org.apache.commons.lang3.StringUtils] → StringUtils.equalsIgnoreCase($end$, $expr$)
+  java.lang.String [org.apache.commons.lang3.StringUtils]  →  StringUtils.equalsIgnoreCase($end$, $expr$)
 
 # log
 .debug : log.debug String/Throwable
-  java.lang.String [org.slf4j.Logger] → log.debug($expr$);
-  java.lang.Throwable [org.slf4j.Logger] → log.debug(null, $expr$);
-  NON_VOID [org.slf4j.Logger] → log.debug("$expr$ : {}", $expr$);
+  java.lang.String [org.slf4j.Logger]     →  log.debug($expr$);
+  java.lang.Throwable [org.slf4j.Logger]  →  log.debug(null, $expr$);
+  NON_VOID [org.slf4j.Logger]             →  log.debug("$expr$ : {}", $expr$);
+
 .info : log.info String/Throwable
-  java.lang.String [org.slf4j.Logger] → log.info($expr$);
-  java.lang.Throwable [org.slf4j.Logger] → log.info(null, $expr$);
-  NON_VOID [org.slf4j.Logger] → log.info("$expr$ : {}", $expr$);
+  java.lang.String [org.slf4j.Logger]     →  log.info($expr$);
+  java.lang.Throwable [org.slf4j.Logger]  →  log.info(null, $expr$);
+  NON_VOID [org.slf4j.Logger]             →  log.info("$expr$ : {}", $expr$);
+
 .warn : log.warn String/Throwable
-  java.lang.String [org.slf4j.Logger] → log.warn($expr$);
-  java.lang.Throwable [org.slf4j.Logger] → log.warn(null, $expr$);
-  NON_VOID [org.slf4j.Logger] → log.warn("$expr$ : {}", $expr$);
+  java.lang.String [org.slf4j.Logger]     →  log.warn($expr$);
+  java.lang.Throwable [org.slf4j.Logger]  →  log.warn(null, $expr$);
+  NON_VOID [org.slf4j.Logger]             →  log.warn("$expr$ : {}", $expr$);
+
 .err : log.error String/Throwable
-  java.lang.String [org.slf4j.Logger] → log.error($expr$);
-  java.lang.Throwable [org.slf4j.Logger] → log.error(null, $expr$);
-  NON_VOID [org.slf4j.Logger] → log.error("$expr$ : {}", $expr$);
+  java.lang.String [org.slf4j.Logger]     →  log.error($expr$);
+  java.lang.Throwable [org.slf4j.Logger]  →  log.error(null, $expr$);
+  NON_VOID [org.slf4j.Logger]             →  log.error("$expr$ : {}", $expr$);
+
 .jdebug : log.debug(json)
-  NON_VOID [org.slf4j.Logger] → log.debug("$expr$ : {}", Gsons.toJson($expr$));
+  NON_VOID [org.slf4j.Logger]  →  log.debug("$expr$ : {}", Gsons.toJson($expr$));
 .jinfo : log.info(json)
-  NON_VOID [org.slf4j.Logger] → log.info("$expr$ : {}", Gsons.toJson($expr$));
+  NON_VOID [org.slf4j.Logger]  →  log.info("$expr$ : {}", Gsons.toJson($expr$));
 .jwarn : log.warn(json)
-  NON_VOID [org.slf4j.Logger] → log.warn("$expr$ : {}", Gsons.toJson($expr$));
+  NON_VOID [org.slf4j.Logger]  →  log.warn("$expr$ : {}", Gsons.toJson($expr$));
 .jerr : log.error(json)
-  NON_VOID [org.slf4j.Logger] → log.error("$expr$ : {}", Gsons.toJson($expr$));
+  NON_VOID [org.slf4j.Logger]  →  log.error("$expr$ : {}", Gsons.toJson($expr$));
 
 # boolean
 .in : isNull(Object)
-  NON_VOID [java.util.Objects] → Objects.isNull($expr$)
+  NON_VOID [java.util.Objects]                                            →  Objects.isNull($expr$)
 .nn : nonNull(Object)
-  NON_VOID [java.util.Objects] → Objects.nonNull($expr$)
+  NON_VOID [java.util.Objects]                                            →  Objects.nonNull($expr$)
 .ib : isBlank(String)
-  java.lang.String [org.apache.commons.lang3.StringUtils] → StringUtils.isBlank($expr$)
+  java.lang.String [org.apache.commons.lang3.StringUtils]                 →  StringUtils.isBlank($expr$)
 .inb : isNotBlank(String)
-  java.lang.String [org.apache.commons.lang3.StringUtils] → StringUtils.isNotBlank($expr$)
+  java.lang.String [org.apache.commons.lang3.StringUtils]                 →  StringUtils.isNotBlank($expr$)
 .ie : isEmpty(Collection)
-  java.util.Collection [org.apache.commons.collections4.CollectionUtils] → CollectionUtils.isEmpty($expr$)
-  java.util.Map [org.apache.commons.collections4.MapUtils] → MapUtils.isEmpty($expr$)
+  java.util.Collection [org.apache.commons.collections4.CollectionUtils]  →  CollectionUtils.isEmpty($expr$)
+  java.util.Map [org.apache.commons.collections4.MapUtils]                →  MapUtils.isEmpty($expr$)
 .ine : isNotEmpty(Collection)
-  java.util.Collection [org.apache.commons.collections4.CollectionUtils] → CollectionUtils.isNotEmpty($expr$)
-  java.util.Map [org.apache.commons.collections4.MapUtils] → MapUtils.isNotEmpty($expr$)
+  java.util.Collection [org.apache.commons.collections4.CollectionUtils]  →  CollectionUtils.isNotEmpty($expr$)
+  java.util.Map [org.apache.commons.collections4.MapUtils]                →  MapUtils.isNotEmpty($expr$)
 
 # json
 .tj : object to json
-  NON_VOID -> Gsons.toJson($expr$)
+  NON_VOID         -> Gsons.toJson($expr$)
 .fj : json to object
   java.lang.String -> Gsons.fromJson($expr$, $end$)
 
 # Junit5
 .fail : fail
-  java.lang.String [org.junit.jupiter.api.Assertions]            →  org.junit.jupiter.api.Assertions.fail($expr$);
+  java.lang.String [org.junit.jupiter.api.Assertions]    →  org.junit.jupiter.api.Assertions.fail($expr$);
 .assertTrue : assertTrue
-  BOOLEAN [org.junit.jupiter.api.Assertions]           →  org.junit.jupiter.api.Assertions.assertTrue($expr$);
+  BOOLEAN [org.junit.jupiter.api.Assertions]             →  org.junit.jupiter.api.Assertions.assertTrue($expr$);
 .assertFalse : assertFalse
-  BOOLEAN [org.junit.jupiter.api.Assertions]           →  org.junit.jupiter.api.Assertions.assertFalse($expr$);
+  BOOLEAN [org.junit.jupiter.api.Assertions]             →  org.junit.jupiter.api.Assertions.assertFalse($expr$);
 .assertNull : assertNull
-  ANY [org.junit.jupiter.api.Assertions]                         →  org.junit.jupiter.api.Assertions.assertNull($expr$);
+  ANY [org.junit.jupiter.api.Assertions]                 →  org.junit.jupiter.api.Assertions.assertNull($expr$);
 .assertNotNull : assertNotNull
-  ANY [org.junit.jupiter.api.Assertions]                         →  org.junit.jupiter.api.Assertions.assertNotNull($expr$);
+  ANY [org.junit.jupiter.api.Assertions]                 →  org.junit.jupiter.api.Assertions.assertNotNull($expr$);
 .assertSame : assertSame
-  ANY [org.junit.jupiter.api.Assertions]                         →  org.junit.jupiter.api.Assertions.assertSame($args$, $expr$);
+  ANY [org.junit.jupiter.api.Assertions]                 →  org.junit.jupiter.api.Assertions.assertSame($args$, $expr$);
 .assertNotSame : assertNotSame
-  ANY [org.junit.jupiter.api.Assertions]                         →  org.junit.jupiter.api.Assertions.assertNotSame($args$, $expr$);
+  ANY [org.junit.jupiter.api.Assertions]                 →  org.junit.jupiter.api.Assertions.assertNotSame($args$, $expr$);
 .assertEquals : assertEquals
-  ANY [org.junit.jupiter.api.Assertions]                         →  org.junit.jupiter.api.Assertions.assertEquals($args$, $expr$);
+  ANY [org.junit.jupiter.api.Assertions]                 →  org.junit.jupiter.api.Assertions.assertEquals($args$, $expr$);
 .assertNotEquals : assertNotEquals
-  ANY [org.junit.jupiter.api.Assertions]                         →  org.junit.jupiter.api.Assertions.assertNotEquals($args$, $expr$);
+  ANY [org.junit.jupiter.api.Assertions]                 →  org.junit.jupiter.api.Assertions.assertNotEquals($args$, $expr$);
 .assertThrows : assertThrows
-  ANY [org.junit.jupiter.api.Assertions]                         →  org.junit.jupiter.api.Assertions.assertThrows($end$, ()->$expr$);
+  ANY [org.junit.jupiter.api.Assertions]                 →  org.junit.jupiter.api.Assertions.assertThrows($end$, ()->$expr$);
 .assertDoesNotThrow : assertDoesNotThrow
-  ANY [org.junit.jupiter.api.Assertions]                         →  org.junit.jupiter.api.Assertions.assertDoesNotThrow(()->$expr$);
+  ANY [org.junit.jupiter.api.Assertions]                 →  org.junit.jupiter.api.Assertions.assertDoesNotThrow(()->$expr$);
 .assertArrayEquals : assertEquals
-  ARRAY [org.junit.jupiter.api.Assertions]                       →  org.junit.jupiter.api.Assertions.assertArrayEquals($args$, $expr$);
+  ARRAY [org.junit.jupiter.api.Assertions]               →  org.junit.jupiter.api.Assertions.assertArrayEquals($args$, $expr$);
 .assertIterableEquals : assertIterableEquals
-  java.lang.Iterable [org.junit.jupiter.api.Assertions]          →  org.junit.jupiter.api.Assertions.assertIterableEquals($args$, $expr$);
+  java.lang.Iterable [org.junit.jupiter.api.Assertions]  →  org.junit.jupiter.api.Assertions.assertIterableEquals($args$, $expr$);
+
+# lambda
+.toIntStream : to IntStream
+  NUMBER → java.util.stream.IntStream.range(0, $expr$).mapToObj(index -> {  $end$  }).toList();
 
 # Assertions
 .isTrueOr : Assertions.isTrue
@@ -109,7 +117,3 @@
   java.lang.String [com.jkopay.msghub.exception.Assertions] -> Assertions.isBlank($expr$).orThrow($end$);
 .isNotBlankOr : Assertions.isNotBlank
   java.lang.String [com.jkopay.msghub.exception.Assertions] -> Assertions.isNotBlank($expr$).orThrow($end$);
-
-# lambda
-.toIntStream : to IntStream
-  NUMBER → java.util.stream.IntStream.range(0, $expr$).mapToObj(index -> {  $end$  }).toList();
