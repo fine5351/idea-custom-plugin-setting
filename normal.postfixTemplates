@@ -5,63 +5,49 @@
 # equals
 .oeq : Objects.equals
   NON_VOID [java.util.Objects] → Objects.equals($end$, $expr$)
-
 .seq : StringUtils.equals
   java.lang.String [org.apache.commons.lang3.StringUtils] → StringUtils.equals($end$, $expr$)
-
 .seqi : StringUtils.equalsIgnoreCase
   java.lang.String [org.apache.commons.lang3.StringUtils] → StringUtils.equalsIgnoreCase($end$, $expr$)
 
 # log
 .debug : log.debug String/Throwable
   java.lang.String [org.slf4j.Logger] → log.debug($expr$);
-  java.lang.Throwable [org.slf4j.Logger] → log.debug($expr$.getMessage(), $expr$);
+  java.lang.Throwable [org.slf4j.Logger] → log.debug(null, $expr$);
   NON_VOID [org.slf4j.Logger] → log.debug("$expr$ : {}", $expr$);
-
 .info : log.info String/Throwable
   java.lang.String [org.slf4j.Logger] → log.info($expr$);
-  java.lang.Throwable [org.slf4j.Logger] → log.info($expr$.getMessage(), $expr$);
+  java.lang.Throwable [org.slf4j.Logger] → log.info(null, $expr$);
   NON_VOID [org.slf4j.Logger] → log.info("$expr$ : {}", $expr$);
-
 .warn : log.warn String/Throwable
   java.lang.String [org.slf4j.Logger] → log.warn($expr$);
-  java.lang.Throwable [org.slf4j.Logger] → log.warn($expr$.getMessage(), $expr$);
+  java.lang.Throwable [org.slf4j.Logger] → log.warn(null, $expr$);
   NON_VOID [org.slf4j.Logger] → log.warn("$expr$ : {}", $expr$);
-
 .err : log.error String/Throwable
   java.lang.String [org.slf4j.Logger] → log.error($expr$);
-  java.lang.Throwable [org.slf4j.Logger] → log.error($expr$.getMessage(), $expr$);
+  java.lang.Throwable [org.slf4j.Logger] → log.error(null, $expr$);
   NON_VOID [org.slf4j.Logger] → log.error("$expr$ : {}", $expr$);
-
 .jdebug : log.debug(json)
   NON_VOID [org.slf4j.Logger] → log.debug("$expr$ : {}", new Gson().toJson($expr$));
-
 .jinfo : log.info(json)
   NON_VOID [org.slf4j.Logger] → log.info("$expr$ : {}", new Gson().toJson($expr$));
-
 .jwarn : log.warn(json)
   NON_VOID [org.slf4j.Logger] → log.warn("$expr$ : {}", new Gson().toJson($expr$));
-
 .jerr : log.error(json)
   NON_VOID [org.slf4j.Logger] → log.error("$expr$ : {}", new Gson().toJson($expr$));
 
 # boolean
 .in : isNull(Object)
   NON_VOID [java.util.Objects] → Objects.isNull($expr$)
-
 .nn : nonNull(Object)
   NON_VOID [java.util.Objects] → Objects.nonNull($expr$)
-
 .ib : isBlank(String)
   java.lang.String [org.apache.commons.lang3.StringUtils] → StringUtils.isBlank($expr$)
-
 .inb : isNotBlank(String)
   java.lang.String [org.apache.commons.lang3.StringUtils] → StringUtils.isNotBlank($expr$)
-
 .ie : isEmpty(Collection)
   java.util.Collection [org.apache.commons.collections4.CollectionUtils] → CollectionUtils.isEmpty($expr$)
   java.util.Map [org.apache.commons.collections4.MapUtils] → MapUtils.isEmpty($expr$)
-
 .ine : isNotEmpty(Collection)
   java.util.Collection [org.apache.commons.collections4.CollectionUtils] → CollectionUtils.isNotEmpty($expr$)
   java.util.Map [org.apache.commons.collections4.MapUtils] → MapUtils.isNotEmpty($expr$)
@@ -69,7 +55,6 @@
 # json
 .tj : object to json
   NON_VOID -> new Gson().toJson($expr$)
-
 .fj : json to object
   java.lang.String -> new Gson().fromJson($expr$, $end$)
 
@@ -100,3 +85,6 @@
   ARRAY [org.junit.jupiter.api.Assertions]                       →  org.junit.jupiter.api.Assertions.assertArrayEquals($args$, $expr$);
 .assertIterableEquals : assertIterableEquals
   java.lang.Iterable [org.junit.jupiter.api.Assertions]          →  org.junit.jupiter.api.Assertions.assertIterableEquals($args$, $expr$);
+
+.toIntStream : to IntStream
+  NUMBER → java.util.stream.IntStream.range(0, $expr$).mapToObj(index -> {  $end$  }).toList();
