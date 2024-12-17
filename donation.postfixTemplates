@@ -3,3 +3,12 @@
   NON_VOID         -> GsonUtil.toJson($expr$)
 .fj : json to object
   java.lang.String -> GsonUtil.fromJson($expr$, $end$)
+
+.jdebug : log.debug(json)
+  NON_VOID [org.slf4j.Logger]  →  log.debug("$expr$ : {}", GsonUtil.toJson($expr$));
+.jinfo : log.info(json)
+  NON_VOID [org.slf4j.Logger]  →  log.info("$expr$ : {}", GsonUtil.toJson($expr$));
+.jwarn : log.warn(json)
+  NON_VOID [org.slf4j.Logger]  →  log.warn("$expr$ : {}", GsonUtil.toJson($expr$));
+.jerr : log.error(json)
+  NON_VOID [org.slf4j.Logger]  →  log.error("$expr$ : {}", GsonUtil.toJson($expr$));

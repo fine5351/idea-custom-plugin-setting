@@ -4,6 +4,15 @@
 .fj : json to object
   java.lang.String -> Gsons.fromJson($expr$, $end$)
 
+.jdebug : log.debug(json)
+  NON_VOID [org.slf4j.Logger]  →  log.debug("$expr$ : {}", Gsons.toJson($expr$));
+.jinfo : log.info(json)
+  NON_VOID [org.slf4j.Logger]  →  log.info("$expr$ : {}", Gsons.toJson($expr$));
+.jwarn : log.warn(json)
+  NON_VOID [org.slf4j.Logger]  →  log.warn("$expr$ : {}", Gsons.toJson($expr$));
+.jerr : log.error(json)
+  NON_VOID [org.slf4j.Logger]  →  log.error("$expr$ : {}", Gsons.toJson($expr$));
+
 # Exception
 .isTrueOr : Assertions.isTrue
   BOOLEAN [com.jkopay.msghub.exception.Assertions] → Assertions.isTrue($expr$).orThrow($end$);
