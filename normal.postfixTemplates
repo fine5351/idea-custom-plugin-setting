@@ -14,22 +14,18 @@
 .debug : log.debug String/Throwable
   java.lang.String [org.slf4j.Logger]     →  log.debug($expr$);
   java.lang.Throwable [org.slf4j.Logger]  →  log.debug(null, $expr$);
-  NON_VOID [org.slf4j.Logger]             →  log.debug("$expr$ : {}", $expr$);
 
 .info : log.info String/Throwable
   java.lang.String [org.slf4j.Logger]     →  log.info($expr$);
   java.lang.Throwable [org.slf4j.Logger]  →  log.info(null, $expr$);
-  NON_VOID [org.slf4j.Logger]             →  log.info("$expr$ : {}", $expr$);
 
 .warn : log.warn String/Throwable
   java.lang.String [org.slf4j.Logger]     →  log.warn($expr$);
   java.lang.Throwable [org.slf4j.Logger]  →  log.warn(null, $expr$);
-  NON_VOID [org.slf4j.Logger]             →  log.warn("$expr$ : {}", $expr$);
 
 .err : log.error String/Throwable
   java.lang.String [org.slf4j.Logger]     →  log.error($expr$);
   java.lang.Throwable [org.slf4j.Logger]  →  log.error(null, $expr$);
-  NON_VOID [org.slf4j.Logger]             →  log.error("$expr$ : {}", $expr$);
 
 # boolean
 .in : isNull(Object)
