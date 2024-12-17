@@ -56,12 +56,6 @@
   java.util.Collection [org.apache.commons.collections4.CollectionUtils]  →  CollectionUtils.isNotEmpty($expr$)
   java.util.Map [org.apache.commons.collections4.MapUtils]                →  MapUtils.isNotEmpty($expr$)
 
-# json
-.tj : object to json
-  NON_VOID         -> Gsons.toJson($expr$)
-.fj : json to object
-  java.lang.String -> Gsons.fromJson($expr$, $end$)
-
 # Junit5
 .fail : fail
   java.lang.String [org.junit.jupiter.api.Assertions]    →  org.junit.jupiter.api.Assertions.fail($expr$);
