@@ -45,31 +45,31 @@
 
 # Junit5
 .fail : fail
-  java.lang.String [org.junit.jupiter.api.Assertions]    →  org.junit.jupiter.api.Assertions.fail($expr$);
+  java.lang.String [org.junit.jupiter.api.Assertions]    →  fail($expr$);
 .assertTrue : assertTrue
-  BOOLEAN [org.junit.jupiter.api.Assertions]             →  org.junit.jupiter.api.Assertions.assertTrue($expr$);
+  BOOLEAN [org.junit.jupiter.api.Assertions]             →  assertTrue($expr$);
 .assertFalse : assertFalse
-  BOOLEAN [org.junit.jupiter.api.Assertions]             →  org.junit.jupiter.api.Assertions.assertFalse($expr$);
+  BOOLEAN [org.junit.jupiter.api.Assertions]             →  assertFalse($expr$);
 .assertNull : assertNull
-  ANY [org.junit.jupiter.api.Assertions]                 →  org.junit.jupiter.api.Assertions.assertNull($expr$);
+  ANY [org.junit.jupiter.api.Assertions]                 →  assertNull($expr$);
 .assertNotNull : assertNotNull
-  ANY [org.junit.jupiter.api.Assertions]                 →  org.junit.jupiter.api.Assertions.assertNotNull($expr$);
+  ANY [org.junit.jupiter.api.Assertions]                 →  assertNotNull($expr$);
 .assertSame : assertSame
-  ANY [org.junit.jupiter.api.Assertions]                 →  org.junit.jupiter.api.Assertions.assertSame($args$, $expr$);
+  ANY [org.junit.jupiter.api.Assertions]                 →  assertSame($args$, $expr$);
 .assertNotSame : assertNotSame
-  ANY [org.junit.jupiter.api.Assertions]                 →  org.junit.jupiter.api.Assertions.assertNotSame($args$, $expr$);
+  ANY [org.junit.jupiter.api.Assertions]                 →  assertNotSame($args$, $expr$);
 .assertEquals : assertEquals
-  ANY [org.junit.jupiter.api.Assertions]                 →  org.junit.jupiter.api.Assertions.assertEquals($args$, $expr$);
+  ANY [org.junit.jupiter.api.Assertions]                 →  assertEquals($args$, $expr$);
 .assertNotEquals : assertNotEquals
-  ANY [org.junit.jupiter.api.Assertions]                 →  org.junit.jupiter.api.Assertions.assertNotEquals($args$, $expr$);
+  ANY [org.junit.jupiter.api.Assertions]                 →  assertNotEquals($args$, $expr$);
 .assertThrows : assertThrows
-  ANY [org.junit.jupiter.api.Assertions]                 →  org.junit.jupiter.api.Assertions.assertThrows($end$, ()->$expr$);
+  ANY [org.junit.jupiter.api.Assertions]                 →  assertThrows($end$, ()->$expr$);
 .assertDoesNotThrow : assertDoesNotThrow
-  ANY [org.junit.jupiter.api.Assertions]                 →  org.junit.jupiter.api.Assertions.assertDoesNotThrow(()->$expr$);
+  ANY [org.junit.jupiter.api.Assertions]                 →  assertDoesNotThrow(()->$expr$);
 .assertArrayEquals : assertEquals
-  ARRAY [org.junit.jupiter.api.Assertions]               →  org.junit.jupiter.api.Assertions.assertArrayEquals($args$, $expr$);
+  ARRAY [org.junit.jupiter.api.Assertions]               →  assertArrayEquals($args$, $expr$);
 .assertIterableEquals : assertIterableEquals
-  java.lang.Iterable [org.junit.jupiter.api.Assertions]  →  org.junit.jupiter.api.Assertions.assertIterableEquals($args$, $expr$);
+  java.lang.Iterable [org.junit.jupiter.api.Assertions]  →  assertIterableEquals($args$, $expr$);
 
 # lambda
 .toIntStream : to IntStream
