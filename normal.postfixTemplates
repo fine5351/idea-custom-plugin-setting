@@ -41,35 +41,6 @@
   java.util.Map [org.apache.commons.collections4.MapUtils]                →  MapUtils.isEmpty($expr$)
 .ine : isNotEmpty(Collection)
   java.util.Collection [org.apache.commons.collections4.CollectionUtils]  →  CollectionUtils.isNotEmpty($expr$)
-  java.util.Map [org.apache.commons.collections4.MapUtils]                →  MapUtils.isNotEmpty($expr$)
-
-# Junit5
-.fail : fail
-  java.lang.String [org.junit.jupiter.api.Assertions]    →  fail($expr$);
-.assertTrue : assertTrue
-  BOOLEAN [org.junit.jupiter.api.Assertions]             →  assertTrue($expr$);
-.assertFalse : assertFalse
-  BOOLEAN [org.junit.jupiter.api.Assertions]             →  assertFalse($expr$);
-.assertNull : assertNull
-  ANY [org.junit.jupiter.api.Assertions]                 →  assertNull($expr$);
-.assertNotNull : assertNotNull
-  ANY [org.junit.jupiter.api.Assertions]                 →  assertNotNull($expr$);
-.assertSame : assertSame
-  ANY [org.junit.jupiter.api.Assertions]                 →  assertSame($args$, $expr$);
-.assertNotSame : assertNotSame
-  ANY [org.junit.jupiter.api.Assertions]                 →  assertNotSame($args$, $expr$);
-.assertEquals : assertEquals
-  ANY [org.junit.jupiter.api.Assertions]                 →  assertEquals($args$, $expr$);
-.assertNotEquals : assertNotEquals
-  ANY [org.junit.jupiter.api.Assertions]                 →  assertNotEquals($args$, $expr$);
-.assertThrows : assertThrows
-  ANY [org.junit.jupiter.api.Assertions]                 →  assertThrows($end$, ()->$expr$);
-.assertDoesNotThrow : assertDoesNotThrow
-  ANY [org.junit.jupiter.api.Assertions]                 →  assertDoesNotThrow(()->$expr$);
-.assertArrayEquals : assertEquals
-  ARRAY [org.junit.jupiter.api.Assertions]               →  assertArrayEquals($args$, $expr$);
-.assertIterableEquals : assertIterableEquals
-  java.lang.Iterable [org.junit.jupiter.api.Assertions]  →  assertIterableEquals($args$, $expr$);
 
 # lambda
 .toIntStream : to IntStream
