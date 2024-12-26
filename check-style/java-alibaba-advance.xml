@@ -171,7 +171,7 @@
     <module name="NestedIfDepth">
       <property name="max" value="3"/>
     </module>
-    <!-- 檢查未被註釋的main方法,排除以Appllication結尾命名的類 -->
+    <!-- 檢查未被註釋的main方法,排除以Application結尾命名的類 -->
     <module name="UncommentedMain">
       <property name="excludedClasses" value=".*Application$"/>
     </module>
