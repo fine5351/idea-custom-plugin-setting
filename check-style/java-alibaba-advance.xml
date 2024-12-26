@@ -149,7 +149,7 @@
     <!-- 檢查類是否為擴展設計l -->
     <!-- 檢查只有private構造函數的類是否聲明為final -->
     <module name="FinalClass"/>
-    <!-- 檢查工具類是否有putblic的構造器 -->
+    <!-- 檢查工具類是否有public的構造器 -->
     <module name="HideUtilityClassConstructor"/>
     <!-- 檢查接口是否僅定義類型 -->
     <module name="InterfaceIsType"/>
