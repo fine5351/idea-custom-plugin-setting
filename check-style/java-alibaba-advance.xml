@@ -126,6 +126,8 @@
     <module name="MissingSwitchDefault"/>
     <!-- 檢查是否有過度複雜的布爾表達式 -->
     <module name="SimplifyBooleanExpression"/>
+    <!-- 檢查是否有過於複雜的布爾返回代碼段 -->
+    <module name="SimplifyBooleanReturn"/>
 
     <!-- 類設計檢查 -->
     <!-- 檢查類是否為擴展設計l -->
@@ -161,10 +163,6 @@
     <module name="Regexp">
       <property name="format" value="System\.out\.println"/>
       <property name="illegalPattern" value="true"/>
-    </module>
-    <!-- return個數 3個-->
-    <module name="ReturnCount">
-      <property name="max" value="3"/>
     </module>
     <!--try catch 異常處理數量 3-->
     <module name="NestedTryDepth ">
