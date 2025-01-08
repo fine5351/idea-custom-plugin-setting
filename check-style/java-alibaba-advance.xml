@@ -134,7 +134,10 @@
     <!-- 檢查只有private構造函數的類是否聲明為final -->
     <module name="FinalClass"/>
     <!-- 檢查工具類是否有public的構造器 -->
-    <module name="HideUtilityClassConstructor"/>
+    <module name="HideUtilityClassConstructor">
+      <property name="ignoreAnnotatedBy"
+                value="SpringBootApplication, java.lang.Deprecated"/>
+    </module>
     <!-- 檢查接口是否僅定義類型 -->
     <module name="InterfaceIsType"/>
     <!-- 檢查類成員的可見度 檢查類成員的可見性。只有static final 成員是public的
