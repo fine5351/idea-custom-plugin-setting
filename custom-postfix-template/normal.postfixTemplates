@@ -15,17 +15,14 @@
   java.lang.String [org.slf4j.Logger]     →  log.debug($expr$);
   java.lang.Throwable [org.slf4j.Logger]  →  log.debug(null, $expr$);
   NON_VOID [java.util.Objects]            →  log.debug("$end$ : {}", $expr$);
-
 .info : log.info String/Throwable
   java.lang.String [org.slf4j.Logger]     →  log.info($expr$);
   java.lang.Throwable [org.slf4j.Logger]  →  log.info(null, $expr$);
   NON_VOID [java.util.Objects]            →  log.info("$end$ : {}", $expr$);
-
 .warn : log.warn String/Throwable
   java.lang.String [org.slf4j.Logger]     →  log.warn($expr$);
   java.lang.Throwable [org.slf4j.Logger]  →  log.warn(null, $expr$);
   NON_VOID [java.util.Objects]            →  log.warn("$end$ : {}", $expr$);
-
 .err : log.error String/Throwable
   java.lang.String [org.slf4j.Logger]     →  log.error($expr$);
   java.lang.Throwable [org.slf4j.Logger]  →  log.error(null, $expr$);
@@ -48,5 +45,5 @@
   java.util.Map [org.apache.commons.collections4.MapUtils]                →  MapUtils.isNotEmpty($expr$)
 
 # lambda
-.toIntStream : to IntStream
-  NUMBER → java.util.stream.IntStream.range(0, $expr$).mapToObj(index -> {  $end$  }).toList();
+.mapStream : mapStream
+  NUMBER → java.util.stream.IntStream.range(0, $expr$).mapToObj(index -> {$end$}).toList();
