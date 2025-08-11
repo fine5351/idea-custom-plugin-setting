@@ -13,19 +13,19 @@
 # log
 .debug : log.debug String/Throwable
   java.lang.String [org.slf4j.Logger]     →  log.debug($expr$);
-  java.lang.Throwable [org.slf4j.Logger]  →  log.debug(null, $expr$);
+  java.lang.Throwable [org.slf4j.Logger]  →  log.debug(e.getMessage(), $expr$);
   NON_VOID [java.util.Objects]            →  log.debug("$end$ : {}", $expr$);
 .info : log.info String/Throwable
   java.lang.String [org.slf4j.Logger]     →  log.info($expr$);
-  java.lang.Throwable [org.slf4j.Logger]  →  log.info(null, $expr$);
+  java.lang.Throwable [org.slf4j.Logger]  →  log.info(e.getMessage(), $expr$);
   NON_VOID [java.util.Objects]            →  log.info("$end$ : {}", $expr$);
 .warn : log.warn String/Throwable
   java.lang.String [org.slf4j.Logger]     →  log.warn($expr$);
-  java.lang.Throwable [org.slf4j.Logger]  →  log.warn(null, $expr$);
+  java.lang.Throwable [org.slf4j.Logger]  →  log.warn(e.getMessage(), $expr$);
   NON_VOID [java.util.Objects]            →  log.warn("$end$ : {}", $expr$);
 .err : log.error String/Throwable
   java.lang.String [org.slf4j.Logger]     →  log.error($expr$);
-  java.lang.Throwable [org.slf4j.Logger]  →  log.error(null, $expr$);
+  java.lang.Throwable [org.slf4j.Logger]  →  log.error(e.getMessage(), $expr$);
   NON_VOID [java.util.Objects]            →  log.error("$end$ : {}", $expr$);
 
 # boolean
